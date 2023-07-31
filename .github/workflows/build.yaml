@@ -21,3 +21,4 @@ jobs:
         with:
             name: florida-men
             path: dist/florida-men
+            if-no-files-found: error
