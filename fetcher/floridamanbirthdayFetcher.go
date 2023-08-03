@@ -1,4 +1,4 @@
-package floridamanbirthdayfetcher
+package fetcher
 
 import (
 	"fmt"
@@ -9,7 +9,9 @@ import (
 	"github.com/jojoguru/florida-men/domain"
 )
 
-func Fetch(date domain.Date) (*domain.Story, error) {
+type FloridamanbirthdayFetcher struct{}
+
+func (*FloridamanbirthdayFetcher) Fetch(date domain.Date) (*domain.Story, error) {
 	url := buildUrl(date)
 
 	// response, err := fetchData(url)
