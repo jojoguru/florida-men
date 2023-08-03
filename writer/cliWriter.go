@@ -1,4 +1,4 @@
-package cliwriter
+package writer
 
 import (
 	"fmt"
@@ -7,7 +7,9 @@ import (
 	"github.com/pterm/pterm"
 )
 
-func Write(story *domain.Story) error {
+type CliWriter struct{}
+
+func (*CliWriter) Write(story *domain.Story) error {
 	header := fmt.Sprintf("Florida Man story of the day [%s/%d]:", story.Date.Month, story.Date.Day)
 
 	pterm.Println()

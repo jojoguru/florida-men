@@ -3,9 +3,9 @@ package main
 import (
 	"time"
 
-	cliwriter "github.com/jojoguru/florida-men/CliWriter"
 	"github.com/jojoguru/florida-men/domain"
-	floridamanbirthdayfetcher "github.com/jojoguru/florida-men/floridamanbirthdayFetcher"
+	"github.com/jojoguru/florida-men/fetcher"
+	"github.com/jojoguru/florida-men/writer"
 )
 
 func main() {
@@ -19,13 +19,15 @@ func main() {
 func run() error {
 	date, _ := domain.NewDateFromTime(time.Now())
 
-	story, err := floridamanbirthdayfetcher.Fetch(date)
+	fetcher := fetcher.FloridamanbirthdayFetcher{}
+	story, err := fetcher.Fetch(date)
 
 	if err != nil {
 		return err
 	}
 
-	err = cliwriter.Write(story)
+	writer := writer.CliWriter{}
+	err = writer.Write(story)
 	if err != nil {
 		return err
 	}
