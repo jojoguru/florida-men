@@ -23,8 +23,9 @@ jobs:
       - name: Build Linux amd64
         run: GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags '-s -w' -trimpath -o './dist/florida-men-linux-amd64' florida-men.go
       
-      - uses: actions/upload-artifact@v3
-        with:
-            name: florida-men
-            path: dist/
-            if-no-files-found: error
+# currently disabled cause of personal github rate limits (storage)
+#      - uses: actions/upload-artifact@v3
+#        with:
+#            name: florida-men
+#            path: dist/florida-men
+#            if-no-files-found: error
