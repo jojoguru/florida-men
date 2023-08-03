@@ -15,7 +15,7 @@ bin/build
 
 To run the project while developing use
 ```bash
-go run florida-men.go
+go run floridamen.go
 ```
 
 Excute tests:
